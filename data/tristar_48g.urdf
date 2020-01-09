@@ -1,0 +1,1392 @@
+<?xml version="1.0"?>
+<robot  name="Tristar48" >
+ <link  name="baseLink" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin />
+   <geometry >
+    <box  size="0.5 0.5 8.6" />
+   </geometry>
+   <material  name="white" >
+    <color  rgba="1 1 1 0.5" />
+   </material>
+  </visual>
+  <collision >
+   <origin />
+   <geometry >
+    <box  size="0.5 0.5 8.6" />
+   </geometry>
+   <material  name="white" >
+    <color  rgba="1 1 1 0.5" />
+   </material>
+  </collision>
+ </link>
+ <link  name="LED_link_1" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 4.13" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 4.13" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_1"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_1" />
+ </joint>
+ <link  name="LED_link_2" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 3.96" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 3.96" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_2"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_2" />
+ </joint>
+ <link  name="LED_link_3" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 3.79" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 3.79" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_3"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_3" />
+ </joint>
+ <link  name="LED_link_4" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 3.6199999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 3.6199999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_4"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_4" />
+ </joint>
+ <link  name="LED_link_5" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 3.4499999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 3.4499999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_5"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_5" />
+ </joint>
+ <link  name="LED_link_6" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 3.28" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 3.28" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_6"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_6" />
+ </joint>
+ <link  name="LED_link_7" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 3.1099999999999994" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 3.1099999999999994" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_7"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_7" />
+ </joint>
+ <link  name="LED_link_8" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 2.9399999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 2.9399999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_8"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_8" />
+ </joint>
+ <link  name="LED_link_9" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 2.7699999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 2.7699999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_9"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_9" />
+ </joint>
+ <link  name="LED_link_10" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 2.5999999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 2.5999999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_10"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_10" />
+ </joint>
+ <link  name="LED_link_11" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 2.4299999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 2.4299999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_11"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_11" />
+ </joint>
+ <link  name="LED_link_12" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 2.26" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 2.26" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_12"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_12" />
+ </joint>
+ <link  name="LED_link_13" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 2.09" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 2.09" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_13"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_13" />
+ </joint>
+ <link  name="LED_link_14" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 1.9199999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1.9199999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_14"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_14" />
+ </joint>
+ <link  name="LED_link_15" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 1.7499999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1.7499999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_15"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_15" />
+ </joint>
+ <link  name="LED_link_16" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 1.5799999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1.5799999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_16"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_16" />
+ </joint>
+ <link  name="LED_link_17" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 1.4099999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1.4099999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_17"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_17" />
+ </joint>
+ <link  name="LED_link_18" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 1.2399999999999998" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1.2399999999999998" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_18"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_18" />
+ </joint>
+ <link  name="LED_link_19" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 1.0699999999999994" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1.0699999999999994" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_19"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_19" />
+ </joint>
+ <link  name="LED_link_20" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 0.8999999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0.8999999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_20"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_20" />
+ </joint>
+ <link  name="LED_link_21" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 0.7299999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0.7299999999999995" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_21"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_21" />
+ </joint>
+ <link  name="LED_link_22" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 0.5599999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0.5599999999999996" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_22"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_22" />
+ </joint>
+ <link  name="LED_link_23" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 0.3899999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0.3899999999999997" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_23"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_23" />
+ </joint>
+ <link  name="LED_link_24" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 0.21999999999999975" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0.21999999999999975" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_24"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_24" />
+ </joint>
+ <link  name="LED_link_25" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 0.04999999999999982" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0.04999999999999982" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_25"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_25" />
+ </joint>
+ <link  name="LED_link_26" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -0.1200000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -0.1200000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_26"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_26" />
+ </joint>
+ <link  name="LED_link_27" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -0.2900000000000009" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -0.2900000000000009" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_27"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_27" />
+ </joint>
+ <link  name="LED_link_28" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -0.46000000000000085" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -0.46000000000000085" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_28"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_28" />
+ </joint>
+ <link  name="LED_link_29" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -0.6300000000000008" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -0.6300000000000008" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_29"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_29" />
+ </joint>
+ <link  name="LED_link_30" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -0.8000000000000007" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -0.8000000000000007" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_30"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_30" />
+ </joint>
+ <link  name="LED_link_31" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -0.9700000000000006" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -0.9700000000000006" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_31"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_31" />
+ </joint>
+ <link  name="LED_link_32" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -1.1400000000000006" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -1.1400000000000006" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_32"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_32" />
+ </joint>
+ <link  name="LED_link_33" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -1.3100000000000005" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -1.3100000000000005" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_33"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_33" />
+ </joint>
+ <link  name="LED_link_34" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -1.4800000000000004" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -1.4800000000000004" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_34"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_34" />
+ </joint>
+ <link  name="LED_link_35" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -1.6500000000000004" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -1.6500000000000004" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_35"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_35" />
+ </joint>
+ <link  name="LED_link_36" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -1.8200000000000003" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -1.8200000000000003" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_36"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_36" />
+ </joint>
+ <link  name="LED_link_37" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -1.9900000000000002" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -1.9900000000000002" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_37"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_37" />
+ </joint>
+ <link  name="LED_link_38" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -2.160000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -2.160000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_38"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_38" />
+ </joint>
+ <link  name="LED_link_39" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -2.330000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -2.330000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_39"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_39" />
+ </joint>
+ <link  name="LED_link_40" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -2.500000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -2.500000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_40"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_40" />
+ </joint>
+ <link  name="LED_link_41" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -2.670000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -2.670000000000001" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_41"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_41" />
+ </joint>
+ <link  name="LED_link_42" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -2.8400000000000007" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -2.8400000000000007" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_42"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_42" />
+ </joint>
+ <link  name="LED_link_43" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -3.0100000000000007" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -3.0100000000000007" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_43"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_43" />
+ </joint>
+ <link  name="LED_link_44" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -3.1800000000000006" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -3.1800000000000006" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_44"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_44" />
+ </joint>
+ <link  name="LED_link_45" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -3.3500000000000005" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -3.3500000000000005" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_45"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_45" />
+ </joint>
+ <link  name="LED_link_46" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -3.5200000000000005" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -3.5200000000000005" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_46"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_46" />
+ </joint>
+ <link  name="LED_link_47" >
+  <inertial >
+   <origin  rpy="0 0 0"  xyz="0 0 0" />
+   <mass  value="1.0" />
+   <inertia  iyz="0"  iyy="1.0"  ixy="0"  ixx="1.0"  izz="1.0"  ixz="0" />
+  </inertial>
+  <visual >
+   <origin  xyz="0 0 -3.6900000000000004" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 -3.6900000000000004" />
+   <geometry >
+    <box  size="0.5 0.5 0.16" />
+   </geometry>
+   <material  name="White" >
+    <color  rgba="1 1 1 1" />
+   </material>
+  </collision>
+ </link>
+ <joint  name="LED_joint_47"  type="fixed" >
+  <parent  link="baseLink" />
+  <child  link="LED_link_47" />
+ </joint>
+</robot>
+

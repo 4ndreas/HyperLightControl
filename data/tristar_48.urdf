@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<robot name="maiskolben">
+  <link name="baseLink">
+     <contact>
+      <lateral_friction value="1"/>
+  </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1.0"/>
+       <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size="0.5 0.5 6"/>
+        </geometry>
+       <material name="white">
+        <color rgba="1 1 1 0.2"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 6"/>
+      </geometry>
+    </collision>   
+
+  </link>
+
+  <link name="LED1">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size="0.5 0.5 0.17 "/>
+        </geometry>
+        <material name="white">
+          <color rgba="1 1 1 1"/>
+        </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.17"/>
+      </geometry>
+    </collision>   
+  </link>
+
+  <link name="LED2">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.17"/>
+        <geometry>
+          <box size="0.5 0.5 0.17 "/>
+        </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.17"/>
+      </geometry>
+    </collision>   
+  </link>
+
+  <link name="LED3">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.34"/>
+        <geometry>
+          <box size="0.5 0.5 0.17 "/>
+        </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.17"/>
+      </geometry>
+    </collision>   
+  </link>
+
+  <link name="LED4">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.51"/>
+        <geometry>
+          <box size="0.5 0.5 0.17 "/>
+        </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.17"/>
+      </geometry>
+    </collision>   
+  </link>
+
+  <link name="LED5">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.68"/>
+        <geometry>
+          <box size="0.5 0.5 0.17 "/>
+        </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.17"/>
+      </geometry>
+    </collision>   
+  </link>
+
+  <link name="LED6">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.5 0.17"/>
+      </geometry>
+    </collision>   
+  </link>
+
+  <joint name="1" type="fixed">
+     <parent link="baseLink"/>
+     <child link="LED1"/>
+     <origin xyz="0 0 0"/>
+  </joint>
+
+  <joint name="2" type="fixed">
+     <parent link="baseLink"/>
+     <child link="LED2"/>
+     <origin xyz="0 0 0"/>
+  </joint>
+
+  <joint name="3" type="fixed">
+     <parent link="baseLink"/>
+     <child link="LED3"/>
+     <origin xyz="0 0 0"/>
+  </joint>
+
+  <joint name="4" type="fixed">
+     <parent link="baseLink"/>
+     <child link="LED4"/>
+     <origin xyz="0 0 0"/>
+  </joint>
+
+  <joint name="5" type="fixed">
+     <parent link="baseLink"/>
+     <child link="LED5"/>
+     <origin xyz="0 0 0"/>
+  </joint>
+
+  <joint name="6" type="fixed">
+     <parent link="baseLink"/>
+     <child link="LED6"/>
+     <origin xyz="0 0 0"/>
+  </joint>
+
+</robot>
+
