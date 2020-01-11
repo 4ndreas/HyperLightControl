@@ -23,8 +23,6 @@ class inputMidi:
         self.alive = 0
         self.running = True
     
-    
-
     def inputDataLoop(self):
 
         # data_variable = inputData()
@@ -119,5 +117,5 @@ class inputMidi:
         if self.running:
             self.running = False
             packet = ""
-            self.input_sock.sendto(bytes(packet), (self.ip, self.port))
+            self.input_sock.sendto(bytes(packet, 'utf-8'), (self.ip, self.port))
 

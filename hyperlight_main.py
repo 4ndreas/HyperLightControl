@@ -24,7 +24,7 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 # p.resetDebugVisualizerCamera( cameraDistance=10, cameraYaw=90, cameraPitch=-80, cameraTargetPosition=[0,20,25]) # look on a1
 # p.resetDebugVisualizerCamera( cameraDistance=50, cameraYaw=45, cameraPitch=-60, cameraTargetPosition=[0,-20,25])
 # p.resetDebugVisualizerCamera( cameraDistance=50, cameraYaw=45, cameraPitch=-60, cameraTargetPosition=[0,-20,25])
-p.resetDebugVisualizerCamera( cameraDistance=1, cameraYaw=270, cameraPitch=-10, cameraTargetPosition=[-50,0,15]) # look on wheel
+p.resetDebugVisualizerCamera( cameraDistance=7, cameraYaw=270, cameraPitch=-10, cameraTargetPosition=[-50,0,15]) # look on wheel
 
 from hyperlights.hyperlights import *
 
@@ -280,8 +280,8 @@ def endThreads():
   mInput.endInput()
   wInput.endInput()
 
-def doCollision(p, col, light):
-  light.doCollisionFilter(p,col)
+# def doCollision(p, col, light):
+#   light.doCollisionFilter(p,col)
 
 
 def main():

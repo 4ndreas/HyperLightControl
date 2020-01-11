@@ -35,7 +35,7 @@ class artnetOut:
             if self.alive > 100:
                 self.running = False
             time.sleep(1./ 40.0)    # 40 fps
-        print("exit artnet thread")
+        print("end artnet thread")
 
     def sendData(self):
         # if(self.running == False):

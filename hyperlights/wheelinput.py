@@ -25,11 +25,10 @@ class wheelInput:
     
 
     def inputDataLoop(self):
+        
         self.wheel_sock.settimeout(5.0)
 
         while (self.running == True):
-            
-
             try:
                 (data, addr) = self.wheel_sock.recvfrom(10240)
           
@@ -62,11 +61,11 @@ class wheelInput:
         self.wheel_sock.bind(('',self.wheel_port))   
         x = threading.Thread(target=self.inputDataLoop )
         x.start()
-        print("starting input Thread")
+        print("starting wheel input Thread")
 
     def endInput(self):
         if self.running:
             self.running = False
             packet = "close"
-            self.wheel_sock.sendto(bytes(packet), ("127.0.0.1", self.wheel_port))
+            self.wheel_sock.sendto(bytes(packet, 'utf-8'), ("127.0.0.1", self.wheel_port))
 
