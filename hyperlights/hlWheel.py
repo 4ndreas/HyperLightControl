@@ -34,8 +34,6 @@ def LED(link_name,origin,material,geom_origin, color="1 1 1 1"):
         name = link_name)
     return ret
 
-
-
 #math.pi/2
 mass = 1.0
 origin = [0,0,0  ,0,0,0,]

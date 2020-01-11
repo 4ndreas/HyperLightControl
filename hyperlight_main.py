@@ -15,8 +15,8 @@ import numpy as np
 import socket
 import copy
 
-# this is the main file
 
+# this is the main file
 p.connect(p.GUI_SERVER)
 p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -156,47 +156,47 @@ lights.append(hlWheel)
 # PPPanel_2.create(p)
 # lights.append(PPPanel_2)
 
-ledGrid = []
+# ledGrid = []
 
-newMod = HlGridR()
-newMod.x = -20
-newMod.y = -19.5
-newMod.z = 25
-newMod.universe = 0
-newMod.ip = "192.168.2.81"
-newMod.onColor_r = 255
-newMod.onColor_g = 128
-newMod.onColor_b = 0
-ledGrid.append(newMod)
+# newMod = HlGridR()
+# newMod.x = -20
+# newMod.y = -19.5
+# newMod.z = 25
+# newMod.universe = 0
+# newMod.ip = "192.168.2.81"
+# newMod.onColor_r = 255
+# newMod.onColor_g = 128
+# newMod.onColor_b = 0
+# ledGrid.append(newMod)
 
-for j in range(1,7):
-  newMod2 = HlGrid()
-  newMod2.x = -20
-  newMod2.y = -19.5
-  newMod2.z = 25
-  newMod2.universe = 0
-  newMod2.ip = "192.168.2.81"
-  newMod2.onColor_r = 255
-  newMod2.onColor_g = 128
-  newMod2.onColor_b = 0
-  newMod2.y += j * 6.5
-  newMod2.universe = j
-  ledGrid.append(newMod2)
+# for j in range(1,7):
+#   newMod2 = HlGrid()
+#   newMod2.x = -20
+#   newMod2.y = -19.5
+#   newMod2.z = 25
+#   newMod2.universe = 0
+#   newMod2.ip = "192.168.2.81"
+#   newMod2.onColor_r = 255
+#   newMod2.onColor_g = 128
+#   newMod2.onColor_b = 0
+#   newMod2.y += j * 6.5
+#   newMod2.universe = j
+#   ledGrid.append(newMod2)
 
-newMod3 = HlGridR()
-newMod3.x = -20
-newMod3.y = 26
-newMod3.z = 25
-newMod3.universe = 7
-newMod3.ip = "192.168.2.81"
-newMod3.onColor_r = 255
-newMod3.onColor_g = 128
-newMod3.onColor_b = 0
-ledGrid.append(newMod3)
+# newMod3 = HlGridR()
+# newMod3.x = -20
+# newMod3.y = 26
+# newMod3.z = 25
+# newMod3.universe = 7
+# newMod3.ip = "192.168.2.81"
+# newMod3.onColor_r = 255
+# newMod3.onColor_g = 128
+# newMod3.onColor_b = 0
+# ledGrid.append(newMod3)
 
-for ledMod in ledGrid :
-  ledMod.create(p) # this have to be done here or it will not work...
-  lights.append(ledMod)
+# for ledMod in ledGrid :
+#   ledMod.create(p) # this have to be done here or it will not work...
+#   lights.append(ledMod)
 
 # A1struct = Hl_A1()
 # A1struct.x = 0
@@ -280,6 +280,10 @@ def endThreads():
   mInput.endInput()
   wInput.endInput()
 
+def doCollision(p, col, light):
+  light.doCollisionFilter(p,col)
+
+
 def main():
   p.setRealTimeSimulation(1)
   # p.setGravity(0, 0, -10) # we don't use gravity yet
@@ -293,29 +297,30 @@ def main():
   mInput.startInput(lights, colliders)
   wInput.startInput()
 
-  wheelAngle = 0
-
+  # debug colors only for show
   colors = [[1, 0, 0, 1], [0, 1, 0, 1], [0, 0, 1, 1], [1, 1, 1, 1]]
   currentColor = 0
 
   try:
     while (p.isConnected()):
-      time.sleep(1. / 40.)
-      aOutput.alive = 0 # reset output timeout, hack for threads...
+      time.sleep(1. / 40.)  # set to 40 fps
+      # reset output timeout, hack for threads...
+      aOutput.alive = 0 
       mInput.alive = 0
       wInput.alive = 0
 
-      wheelAngle = wInput.angle
-      hlWheel.setRotation(p,wheelAngle ) 
+      # update the wheel feedback
+      hlWheel.setRotation(p,wInput.angle ) 
 
+      # this is the main part of the sim
+      p.stepSimulation()
       for col in colliders:
         col.simulate(p)
         if col.enabled : 
           for light in lights:
             light.doCollisionFilter(p,col)
-
-      p.stepSimulation()
-
+      
+      # get mouse events 
       mouseEvents = p.getMouseEvents()
       for e in mouseEvents:
         if ((e[0] == 2) and (e[3] == 0) and (e[4] & p.KEY_WAS_TRIGGERED)):
@@ -328,6 +333,9 @@ def main():
             objectUid = hit[0]
             jointUid = hit[1]
             if (objectUid >= 1):
+              # this is for debug click on an object to get id 
+              # oject will change color this has no effect
+              # changing color real time seems to slow
               print("obj %i joint %i" % (objectUid , jointUid))
               p.changeVisualShape(objectUid, jointUid, rgbaColor=colors[currentColor])
               currentColor += 1

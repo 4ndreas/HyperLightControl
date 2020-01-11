@@ -65,12 +65,7 @@ class Hyperlights :
 
     def doCollisionFilter(self, p, obj):
         i = 0
-
-        # _hit =[self.pixelNum]
         if self.enable:
-
-            # lock = Lock()
-            # lock.acquire() # will block if lock is already held
             for px in self.pixel:
                 # check for subpixel
                 subPixelCount = p.getNumJoints(px) 
@@ -94,18 +89,6 @@ class Hyperlights :
                     self.hit[i] = hit
                     i += 1
             self.update = True
-            # lock.release()
-
-                # self.make_header()
-                # self.createArtnet()
-                # if(hit != self.hit[i]):
-                #     if hit == 1:
-                #         self.hit[i] = hit
-                #         # p.changeVisualShape(px, -1, rgbaColor=[self.onColor_r, self.onColor_g, self.onColor_b, 255])
-                #     else:
-                #         self.hit[i] = hit
-                        # p.changeVisualShape(px, -1, rgbaColor=[50, 50, 50, 255])
-
 
     def sendData(self):
         if self.enable:
@@ -195,6 +178,7 @@ class Hyperlights :
         # ... access shared resource
         extended = False
 
+        # currently limited to 2 x 170 leds per light
         for res in self.hit:
             if i < 510:
                 if res == 1:
@@ -208,7 +192,8 @@ class Hyperlights :
                 i = i+3
             elif i < 1020:
                 extended = True
-                # print(i)
+                # nasty hack for 2 universes per light
+                # need better way to do this
                 if res == 1:
                     self.artnetData2[i-510] = self.onColor_r
                     self.artnetData2[i+1-510] = self.onColor_g
@@ -253,22 +238,16 @@ class Hyperlights :
             # p.setCollisionFilterPair(obj, px, -1, -1, enableCollision)
 
     def fillHit(self, p):
+        # have to be called on init to fill the buffer
         j = 0
-        # self.hit = []
-        
 
         for px in self.pixel:
             self.numJoints = p.getNumJoints(px)
             # print("numJoints %i " % (px.numJoints))
-
-            # print(p.getJointInfo(px,0)) # extract name?
-
             # print("add hit px:%d" % px)
             # body = p.getBodyUniqueId(px)
             # pixelMap.append(body)
 
-            # while len(self.hit) <= body:
-                #  self.hit.append(j)
             if p.getNumJoints(px) > 0:
                 self.pixelNum += p.getNumJoints(px)+1
                 for i in range(0, p.getNumJoints(px)+1):
@@ -280,21 +259,14 @@ class Hyperlights :
                 self.hit.append(px)
             
             self.setCollisionFilterMask(p,0)
-        
+
         print("pixnum: %d pixel: %d, hit:%d" % (self.pixelNum, len(self.pixel), len(self.hit)))
-        # print(self.pixel)
 
     def create(self, p):
         self.addPixel(p,self.dirpath + "pixel.urdf,", [self.x, self.y, self.z], [0,0,0,0])
-        # pixel_1 = p.loadURDF("pixel.urdf", [self.x, self.y, self.z], useMaximalCoordinates=False)
-        # self.pixel.append(pixel_1)
         self.fillHit(p)
 
-
 class HlGrid (Hyperlights):
-    # hit = []
-    # pixel = []
-
     def create (self, p):
         self.make_header()
 
@@ -307,10 +279,6 @@ class HlGrid (Hyperlights):
         dx = 9.0
         dz = -3.0
         
-        # for i in range(-7,7):
-        #     # self.addPixel(p,"pixel_Line.urdf", [_x, i * dy + _y, _z], orn)
-        #     self.addPixel(p,"tristar_48g.urdf", [_x, i * dy + _y, _z], orn)
-
         self.addPixel(p,self.dirpath + "tristar_48g.urdf", [_x, _y, _z], orn)
         orn = p.getQuaternionFromEuler([math.pi/2, 0, math.pi/2])
         i = -1        
@@ -332,8 +300,6 @@ class HlGridR (Hyperlights):
         _z = self.z
         dx = -3.0
         
-        
-
         self.addPixel(p,self.dirpath + "tristar_48g.urdf", [_x, _y, _z], orn)
         orn = p.getQuaternionFromEuler([0, 0, 0])  
         dz = -8.0
@@ -358,7 +324,6 @@ class HlWheel (Hyperlights):
             self.enMotor = 1
         else:
             self.enMotor = 0
-
         self.sendMotor()
 
     def setMotor1Speed(self, speed):
@@ -370,9 +335,7 @@ class HlWheel (Hyperlights):
             self.dirMotor1 = 1
         else:
             self.dirMotor1 = 0
-
         self.sendMotor()
-
 
     def sendMotor(self):
         packet = bytearray()
@@ -387,7 +350,6 @@ class HlWheel (Hyperlights):
         packet.append(self.dirMotor2 )   # Motor 2 dir
         # print("motor Control")
         # print(packet)
-
         self.artnetSocket.sendto(bytes(packet), (self.ip, self.artnetPort))
 
     def create (self, p):
@@ -411,9 +373,6 @@ class HlWheel (Hyperlights):
 
 
 class Hl_A1 (Hyperlights):
-    # hit = []
-    # pixel = []
-
     def create (self, p):
         self.ip = "192.168.2.73"
         self.universe = 0
@@ -479,14 +438,9 @@ class Hl_A1 (Hyperlights):
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [ -5 * dx + _x,-1.0 * dy + _y, _z], orn)
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [ -6 * dx + _x, 0.0 * dy + _y, _z], orn)
 
-
         self.fillHit(p)
 
-
 class HlPPPanel (Hyperlights):
-    # hit = []
-    # pixel = []
-
     def create (self, p):
         self.ip = "192.168.2.80"
         self.make_header()
@@ -499,14 +453,9 @@ class HlPPPanel (Hyperlights):
             h = (-i) * d + self.z
             for j in range(-8,8 ):
                 self.addPixel(p,self.dirpath + "pixel.urdf", [j * d + self.x, self.y, h], orn)
-
         self.fillHit(p)
 
-
 class HlMaiskoblen (Hyperlights):
-    # hit = []
-    # pixel = []
-
     def create (self, p):
         self.ip = "192.168.2.80"
         self.pxiel = []
@@ -529,9 +478,6 @@ class HlMaiskoblen (Hyperlights):
 
 
 class HlStarCore (Hyperlights):
-    # hit = []
-    # pixel = []
-
     def create (self, p):
         self.make_header()
         self.pixelOffset = 1
@@ -569,9 +515,6 @@ class HlStarCore (Hyperlights):
         
 
 class HlStarLight (Hyperlights):
-    # hit = []
-    # pixel = []
-
     def create (self, p):
         self.make_header()
         self.pixelOffset = 7
@@ -608,7 +551,6 @@ class HlStarLight (Hyperlights):
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
 
-
         _x = self.x + 0
         _y = self.y + 4
 
@@ -633,8 +575,6 @@ class HlStarLight (Hyperlights):
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
 
-
-
         _x = self.x + math.sin(math.pi/3) * 4
         _y = self.y + 2
 
@@ -658,7 +598,6 @@ class HlStarLight (Hyperlights):
         rot = math.pi / 3 
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
-
 
         _x = self.x + math.sin(math.pi/3) * 4
         _y = self.y - 2
@@ -708,7 +647,6 @@ class HlStarLight (Hyperlights):
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
 
-
         _x = self.x + math.sin(math.pi/3) * 4
         _y = self.y - 2
 
@@ -732,7 +670,6 @@ class HlStarLight (Hyperlights):
         rot = math.pi / 3 
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
-
 
         _x = self.x
         _y = self.y - 4
@@ -758,7 +695,6 @@ class HlStarLight (Hyperlights):
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
 
-
         _x = self.x - math.sin(math.pi/3) * 4
         _y = self.y + 2
 
@@ -783,7 +719,6 @@ class HlStarLight (Hyperlights):
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
 
-
         _x = self.x - math.sin(math.pi/3) * 4
         _y = self.y - 2
 
@@ -807,7 +742,5 @@ class HlStarLight (Hyperlights):
         rot = math.pi / 3 
         orn = p.getQuaternionFromEuler([d, 0, rot])
         self.addPixel(p,self.dirpath + "pixel_core_s.urdf", [sx + _x, -sy + _y, h], orn) 
-
-
 
         self.fillHit(p)
